@@ -1,0 +1,17 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /dashboard
+Disallow: /receipts
+Disallow: /ifta
+Disallow: /broker-battler
+Disallow: /mechanics-eye
+Disallow: /trips
+Disallow: /expenses
+Disallow: /broker
+Disallow: /documents
+Disallow: /load-oracle
+Disallow: /settings
+
+Disallow: /api/
+
+Sitemap: /sitemap.xml

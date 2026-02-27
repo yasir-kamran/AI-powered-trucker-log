@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": "usr_m8wla3ZjSs-Gtx0V",
+      "email": "yasir32003@gmail.com",
+      "password_hash": "$2a$10$RWPeHuB4.LnJxRtGXFAsT.xO1lobqCUbah7STb4n2OthOX9nWdVoS",
+      "created_at": "2026-01-17T23:06:32.137Z"
+    }
+  ],
+  "profiles": [
+    {
+      "user_id": "usr_m8wla3ZjSs-Gtx0V",
+      "company_name": null,
+      "dot_number": null,
+      "ifta_account": null,
+      "created_at": "2026-01-17T23:06:32.137Z",
+      "updated_at": "2026-01-17T23:06:32.137Z"
+    }
+  ],
+  "password_reset_tokens": [],
+  "trips": [],
+  "expenses": []
+}

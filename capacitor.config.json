@@ -1,0 +1,6 @@
+{
+  "appId": "com.truckerlogai.app",
+  "appName": "TruckerLog AI",
+  "webDir": "build",
+  "bundledWebRuntime": false
+}
