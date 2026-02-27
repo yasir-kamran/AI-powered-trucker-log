@@ -440,6 +440,7 @@ app.delete('/api/documents/:id', requireAuth(JWT_SECRET), async (req, res) => {
   return res.json({ ok: true });
 });
 
-app.listen(PORT, '127.0.0.1', () => {
-  console.log(`API server listening on http://127.0.0.1:${PORT}`);
+// We use process.env.PORT directly so we don't conflict with any other variables
+app.listen(process.env.PORT || 5000, "0.0.0.0", () => {
+  console.log("Server is running, unlocked, and listening to Render!");
 });
