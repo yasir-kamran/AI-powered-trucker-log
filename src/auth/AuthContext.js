@@ -1,12 +1,29 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { API_URL } from '../config/api.js';
 
+// Fallback URL in case import fails
+const FALLBACK_API_URL = 'https://ai-powered-trucker-log.onrender.com';
+
+// Ultimate fallback from window (for production)
+const getWindowApiUrl = () => {
+  if (typeof window !== 'undefined' && window.API_BASE_URL) {
+    return window.API_BASE_URL;
+  }
+  return FALLBACK_API_URL;
+};
+
 const AuthContext = createContext(null);
 
 const TOKEN_KEY = 'truckerlog_token';
 
 async function apiRequest(path, { method = 'GET', token, body } = {}) {
-  const res = await fetch(`${API_URL}${path}`, {
+  const apiUrl = API_URL || getWindowApiUrl();
+  const fullUrl = `${apiUrl}${path}`;
+  console.log('Making API request to:', fullUrl, 'Method:', method);
+  console.log('Using API_URL:', apiUrl);
+  console.log('Is absolute URL:', fullUrl.startsWith('http'));
+  
+  const res = await fetch(fullUrl, {
     method,
     headers: {
       'Content-Type': 'application/json',
