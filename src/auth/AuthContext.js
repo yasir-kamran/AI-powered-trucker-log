@@ -1,11 +1,12 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { API_URL } from '../config/api.js';
 
 const AuthContext = createContext(null);
 
 const TOKEN_KEY = 'truckerlog_token';
 
 async function apiRequest(path, { method = 'GET', token, body } = {}) {
-  const res = await fetch(path, {
+  const res = await fetch(`${API_URL}${path}`, {
     method,
     headers: {
       'Content-Type': 'application/json',
