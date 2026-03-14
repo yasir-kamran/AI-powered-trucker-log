@@ -1,10 +1,9 @@
-// API Configuration - Force production URL for Vercel deployment
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://ai-powered-trucker-log.onrender.com';
+// API Configuration - NUKE OPTION: Hardcoded production URL
+const API_BASE_URL = 'https://ai-powered-trucker-log.onrender.com';
 
 export const API_URL = API_BASE_URL;
 
-// Debug logging
-console.log('=== API Configuration ===');
-console.log('REACT_APP_API_URL:', process.env.REACT_APP_API_URL);
-console.log('NODE_ENV:', process.env.NODE_ENV);
-console.log('Final API_URL configured as:', API_URL);
+// Debug logging - will always show the hardcoded URL
+console.log('=== NUCLEAR API CONFIGURATION ===');
+console.log('Hardcoded API_URL (NO ENV VARS):', API_URL);
+console.log('This URL cannot be changed by environment variables!');
