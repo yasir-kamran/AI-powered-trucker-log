@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';
 import { z } from 'zod';
 import { getDb, writeDb } from './db.js';
 import {
@@ -18,6 +19,13 @@ const PORT = Number(process.env.PORT || 5000);
 const JWT_SECRET = process.env.JWT_SECRET || 'dev_secret_change_me';
 
 const app = express();
+
+// Enable CORS for all origins
+app.use(cors({
+  origin: ['https://ai-powered-trucker-70hr4qplw-yasir-kamrans-projects.vercel.app', 'https://ai-powered-trucker-log.onrender.com'],
+  credentials: true
+}));
+
 app.use(express.json({ limit: '25mb' }));
 
 app.get('/', (req, res) => {
